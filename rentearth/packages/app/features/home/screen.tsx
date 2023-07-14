@@ -21,7 +21,7 @@ export function HomeScreen() {
   return (
     <YStack f={1} jc="center" ai="center" p="$4" space>
       <YStack space="$4" maw={600}>
-        <H1 ta="center">Welcome to RentEarth.com</H1>
+        <H1 ta="center" color="#F8F8F8">Welcome to RentEarth.com</H1>
         <Paragraph ta="center">
           Proof of concept of Tamagui based application for the website.
         </Paragraph>
@@ -29,10 +29,12 @@ export function HomeScreen() {
         <Separator />
         <Paragraph ta="center">
           Project Docs located {' '}
-          <Anchor color="$color12" href="https://kbve.com/" target="_blank">
-            @kbve
+          <Anchor color="$color12" href="https://kbve.com/project/rentearth/" target="_blank">
+            Rent Earth Project
           </Anchor>
-          ,{' '}
+          ,{' '} and actively developed by <Anchor color="#e879f9" href="https://kbve.com/" target="_blank">
+            Kilo Byte Virtual Enterprise.
+          </Anchor>{' '}
          
         </Paragraph>
       </YStack>
