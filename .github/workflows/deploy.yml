@@ -22,9 +22,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "lts/*"
+          node-version: "18"
           cache: "yarn"
-          cache-dependency-path: ./rentearth/yarn.lock
+          cache-dependency-path: './rentearth/yarn.lock'
 
       - name: Build
         working-directory: ./rentearth/
