@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "yarn"
-          #cache-dependency-path: ./package-lock.json
+          cache-dependency-path: ./rentearth/yarn.lock
 
       - name: Build
         working-directory: ./rentearth/
