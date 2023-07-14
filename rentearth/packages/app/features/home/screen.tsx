@@ -21,27 +21,19 @@ export function HomeScreen() {
   return (
     <YStack f={1} jc="center" ai="center" p="$4" space>
       <YStack space="$4" maw={600}>
-        <H1 ta="center">Welcome to Tamagui.</H1>
+        <H1 ta="center">Welcome to RentEarth.com</H1>
         <Paragraph ta="center">
-          Here's a basic starter to show navigating from one screen to another. This screen uses the
-          same code on Next.js and React Native.
+          Proof of concept of Tamagui based application for the website.
         </Paragraph>
 
         <Separator />
         <Paragraph ta="center">
-          Made by{' '}
-          <Anchor color="$color12" href="https://twitter.com/natebirdman" target="_blank">
-            @natebirdman
+          Project Docs located {' '}
+          <Anchor color="$color12" href="https://kbve.com/" target="_blank">
+            @kbve
           </Anchor>
           ,{' '}
-          <Anchor
-            color="$color12"
-            href="https://github.com/tamagui/tamagui"
-            target="_blank"
-            rel="noreferrer"
-          >
-            give it a ⭐️
-          </Anchor>
+         
         </Paragraph>
       </YStack>
 
