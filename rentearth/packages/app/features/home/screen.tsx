@@ -3,6 +3,7 @@ import {
   Button,
   H1,
   Paragraph,
+  Text,
   Separator,
   Sheet,
   useToastController,
@@ -15,7 +16,10 @@ import { useLink } from 'solito/link'
 
 export function HomeScreen() {
   const linkProps = useLink({
-    href: '/user/nate',
+    href: '/user/guest',
+  })
+  const registerProps = useLink({
+    href: '/auth/register',
   })
 
   return (
@@ -39,8 +43,9 @@ export function HomeScreen() {
         </Paragraph>
       </YStack>
 
-      <XStack>
-        <Button {...linkProps}>Link to user</Button>
+      <XStack space="$2">
+        <Button {...linkProps} size="$5"  m="$1">Login</Button>
+        <Button {...registerProps}  size="$5"  color="#e879f9" m="$1" >Register</Button>
       </XStack>
 
       <SheetDemo />
