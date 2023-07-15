@@ -3,6 +3,7 @@ import {
   Button,
   H1,
   Paragraph,
+  Text,
   Separator,
   Sheet,
   useToastController,
@@ -15,13 +16,16 @@ import { useLink } from 'solito/link'
 
 export function HomeScreen() {
   const linkProps = useLink({
-    href: '/user/nate',
+    href: '/user/guest',
+  })
+  const registerProps = useLink({
+    href: '/auth/register',
   })
 
   return (
     <YStack f={1} jc="center" ai="center" p="$4" space>
       <YStack space="$4" maw={600}>
-        <H1 ta="center">Welcome to RentEarth.com</H1>
+        <H1 ta="center" color="#F8F8F8">Welcome to RentEarth.com</H1>
         <Paragraph ta="center">
           Proof of concept of Tamagui based application for the website.
         </Paragraph>
@@ -29,16 +33,19 @@ export function HomeScreen() {
         <Separator />
         <Paragraph ta="center">
           Project Docs located {' '}
-          <Anchor color="$color12" href="https://kbve.com/" target="_blank">
-            @kbve
+          <Anchor color="$color12" href="https://kbve.com/project/rentearth/" target="_blank">
+            Rent Earth Project
           </Anchor>
-          ,{' '}
+          ,{' '} and actively developed by <Anchor color="#e879f9" href="https://kbve.com/" target="_blank">
+            Kilo Byte Virtual Enterprise.
+          </Anchor>{' '}
          
         </Paragraph>
       </YStack>
 
-      <XStack>
-        <Button {...linkProps}>Link to user</Button>
+      <XStack space="$2">
+        <Button {...linkProps} size="$5"  m="$1">Login</Button>
+        <Button {...registerProps}  size="$5"  color="#e879f9" m="$1" >Register</Button>
       </XStack>
 
       <SheetDemo />

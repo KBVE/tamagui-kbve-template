@@ -1,4 +1,4 @@
-import { createTamagui } from 'tamagui'
+import { createTamagui, createTokens  } from 'tamagui'
 import { createInterFont } from '@tamagui/font-inter'
 import { shorthands } from '@tamagui/shorthands'
 import { themes, tokens } from '@tamagui/themes'
@@ -49,6 +49,8 @@ const bodyFont = createInterFont(
     sizeLineHeight: (size) => Math.round(size * 1.1 + (size > 20 ? 10 : 10)),
   }
 )
+
+
 
 export const config = createTamagui({
   defaultFont: 'body',

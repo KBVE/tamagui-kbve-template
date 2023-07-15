@@ -7,7 +7,9 @@ export default function Screen() {
       <Stack.Screen
         options={{
           title: 'User',
-        }}
+          headerStyle: { backgroundColor : '#343341'},
+          headerShown: false,
+          animation: "slide_from_bottom",        }}
       />
       <UserDetailScreen />
     </>
