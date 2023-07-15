@@ -6,6 +6,10 @@ import { useLink } from 'solito/link'
 
 const { useParam } = createParam<{ id: string }>()
 
+/**
+ * User Detail Screen : Boilerplate from the earlier template, will be replaced.
+ * @returns 
+ */
 export function UserDetailScreen() {
   const [id] = useParam('id')
   const link = useLink({
@@ -23,3 +27,15 @@ export function UserDetailScreen() {
     </YStack>
   )
 }
+
+/**
+ * 
+ * 
+ * 
+const client = new Client();
+
+client
+    .setEndpoint('https://ap.kbve.com/v1')
+    .setProject('6436a6dc9a6b48db802f');
+ 
+ */

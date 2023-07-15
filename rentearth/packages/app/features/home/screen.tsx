@@ -38,7 +38,7 @@ export function HomeScreen() {
           width={200}
           height={250}
           image={'https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4'}
-          stock={1}
+          stock={0}
         />
         <ShopCard
           link={'/rent/moon'}
@@ -55,7 +55,7 @@ export function HomeScreen() {
       <YStack space="$4" maw={600}>
         <H1 ta="center">Welcome to RentEarth.com</H1>
         <Paragraph ta="center">
-          Proof of concept of Tamagui based application for the website.
+          Rent the augmentation.
         </Paragraph>
 
         <Separator />
