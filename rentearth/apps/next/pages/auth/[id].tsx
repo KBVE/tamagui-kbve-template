@@ -1,13 +1,13 @@
-import { Register } from 'app/features/auth/register'
+import { Auth } from 'app/features/auth/auth'
 import Head from 'next/head'
 
 export default function Page() {
   return (
     <>
       <Head>
-        <title> Register </title>
+        <title> Auth </title>
       </Head>
-      <Register />
+      <Auth />
     </>
   )
 }

@@ -6,8 +6,20 @@ import { useLink } from 'solito/link'
 
 const { useParam } = createParam<{ id: string }>()
 
+const AuthRender = (props: { id?: string }) => {
+  switch (props.id) {
+    case 'register':
+      return <RegisterForm />
+    default:
+      return (
+        <>
+          <Paragraph ta="center" fow="700">{`Auth ID: ${props.id}`}</Paragraph>
+        </>
+      )
+  }
+}
 
-export function Register() {
+export function Auth() {
   const [id] = useParam('id')
   const link = useLink({
     href: '/',
@@ -15,13 +27,10 @@ export function Register() {
 
   return (
     <YStack f={1} jc="center" ai="center" space>
-      
-      <RegisterForm />
-      <Paragraph ta="center" fow="700">{`Register ID Form: ${id}`}</Paragraph>
+      <AuthRender id={id} />
       <Button {...link} icon={ChevronLeft}>
         Go Home
       </Button>
-    
     </YStack>
   )
 }
