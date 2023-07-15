@@ -8,7 +8,7 @@ export default function Screen() {
         options={{
           title: 'Auth',
           headerStyle: { backgroundColor : '#343341'},
-          headerShown: true,
+          headerShown: false,
           animation: "slide_from_bottom",        }}
       />
       <Auth />

@@ -30,6 +30,7 @@ export const ShopCard = (props: ShopCardConfig) => {
       size="$4"
       bordered
       animation="bouncy"
+      backgroundColor="$background"
       width={props.width}
       height={props.height}
       scale={0.9}

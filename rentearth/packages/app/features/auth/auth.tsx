@@ -26,7 +26,7 @@ export function Auth() {
   })
 
   return (
-    <YStack f={1} jc="center" ai="center" space>
+    <YStack f={1} jc="center" ai="center" backgroundColor={"#000"} space>
       <AuthRender id={id} />
       <Button {...link} icon={ChevronLeft}>
         Go Home
