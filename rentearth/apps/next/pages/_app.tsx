@@ -9,6 +9,7 @@ import Head from 'next/head'
 import React from 'react'
 import type { SolitoAppProps } from 'solito'
 
+
 if (process.env.NODE_ENV === 'production') {
   require('../public/tamagui.css')
 }
@@ -20,7 +21,10 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
         <title>RentEarth.com </title>
         <meta name="description" content="Tamagui, Solito, Expo & Next.js" />
         <link rel="icon" href="/favicon.ico" />
+        
+        
       </Head>
+     
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
@@ -33,6 +37,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <NextThemeProvider
+    forcedTheme="dark"
       onChangeTheme={(next) => {
         setTheme(next as any)
       }}
@@ -42,6 +47,6 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
       </Provider>
     </NextThemeProvider>
   )
-}
+} 
 
 export default MyApp

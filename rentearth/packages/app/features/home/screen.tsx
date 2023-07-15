@@ -5,12 +5,13 @@ import {
   Paragraph,
   Text,
   Separator,
+  Theme,
   Sheet,
   useToastController,
   XStack,
   YStack,
 } from '@my/ui'
-import { ChevronDown, ChevronUp } from '@tamagui/lucide-icons'
+import { ChevronDown, ChevronUp, LogIn } from '@tamagui/lucide-icons'
 import React, { useState } from 'react'
 import { useLink } from 'solito/link'
 
@@ -25,7 +26,7 @@ export function HomeScreen() {
   return (
     <YStack f={1} jc="center" ai="center" p="$4" space>
       <YStack space="$4" maw={600}>
-        <H1 ta="center" color="#F8F8F8">Welcome to RentEarth.com</H1>
+        <H1 ta="center">Welcome to RentEarth.com</H1>
         <Paragraph ta="center">
           Proof of concept of Tamagui based application for the website.
         </Paragraph>
@@ -44,7 +45,7 @@ export function HomeScreen() {
       </YStack>
 
       <XStack space="$2">
-        <Button {...linkProps} size="$5"  m="$1">Login</Button>
+        <Button {...linkProps} size="$5" icon={LogIn}  m="$1">Login</Button>
         <Button {...registerProps}  size="$5"  color="#e879f9" m="$1" >Register</Button>
       </XStack>
 
