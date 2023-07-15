@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
     <>
       <Head>
         <title>RentEarth.com </title>
-        <meta name="description" content="Tamagui, Solito, Expo & Next.js" />
+        <meta name="description" content="Proof of Concept from KBVE! Rent a virtual world now!" />
         <link rel="icon" href="/favicon.ico" />
         
         
