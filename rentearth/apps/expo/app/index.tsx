@@ -8,7 +8,7 @@ export default function Screen() {
         options={{
           title: 'Home',
           headerStyle: { backgroundColor : '#343341'},
-          headerShown: true,
+          headerShown: false,
           animation: "fade",
         }}
         

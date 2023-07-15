@@ -30,34 +30,35 @@ export function HomeScreen() {
 
   return (
     <YStack f={1} jc="center" ai="center" p="$4" space>
-      <XStack $sm={{ flexDirection: 'row' }} paddingHorizontal="$4" space>
-        <ShopCard
-          link={'/rent/earth'}
-          title={'Earth'}
-          paragraph={'Unavailable'}
-          width={200}
-          height={250}
-          image={'https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4'}
-          stock={0}
-        />
-        <ShopCard
-          link={'/rent/moon'}
-          title={'Moon'}
-          paragraph={'Available'}
-          width={200}
-          height={250}
-          image={
-            'https://images.unsplash.com/photo-1532693322450-2cb5c511067d?&auto=format&fit=crop&w=300&q=80'
-          }
-          stock={1}
-        />
-      </XStack>
-      <YStack space="$4" maw={600}>
-        <H1 ta="center">Welcome to RentEarth.com</H1>
+   
+        <XStack f={1} $sm={{ flexDirection: 'row' }} jc="center" ai="center" ac="center" space>
+          <ShopCard
+            link={'/rent/earth'}
+            title={'Earth'}
+            paragraph={'Available'}
+            width={175}
+            height={250}
+            image={'https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4'}
+            stock={1}
+          />
+          <ShopCard
+            link={'/rent/moon'}
+            title={'Moon'}
+            paragraph={'Available'}
+            width={175}
+            height={250}
+            image={
+              'https://images.unsplash.com/photo-1532693322450-2cb5c511067d?&auto=format&fit=crop&w=300&q=80'
+            }
+            stock={1}
+          />
+        </XStack>
+        <YStack space="$4" maw={600}>
+        <H2 ta="center">Welcome to RentEarth</H2>
+        <Paragraph ta="center">Rent the augmentation but parish if you fail.</Paragraph>
         <Paragraph ta="center">
-          Rent the augmentation.
+          <H2>The Jester has gone Rogue.</H2>
         </Paragraph>
-
         <Separator />
       </YStack>
 
