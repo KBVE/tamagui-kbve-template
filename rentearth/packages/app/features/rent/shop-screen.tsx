@@ -14,12 +14,11 @@ export function RentShopScreen() {
 
   return (
     <YStack f={1} jc="center" ai="center" space>
-      
       <Paragraph ta="center" fow="700">{`Rent a virtual ${id} today!`}</Paragraph>
+
       <Button {...link} icon={ChevronLeft}>
         Go Home
       </Button>
-    
     </YStack>
   )
 }

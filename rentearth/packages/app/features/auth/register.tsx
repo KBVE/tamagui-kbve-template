@@ -14,13 +14,14 @@ export function Register() {
   })
 
   return (
-    <RegisterForm f={1} jc="center" ai="center" space>
+    <YStack f={1} jc="center" ai="center" space>
       
-      <Paragraph ta="center" fow="700">{`Register: ${id}`}</Paragraph>
+      <RegisterForm />
+      <Paragraph ta="center" fow="700">{`Register ID Form: ${id}`}</Paragraph>
       <Button {...link} icon={ChevronLeft}>
         Go Home
       </Button>
     
-    </RegisterForm>
+    </YStack>
   )
 }
