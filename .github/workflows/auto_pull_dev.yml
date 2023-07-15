@@ -1,0 +1,31 @@
+name: RentEarth Auto Dev <-> Main Pull Request
+
+on:
+  push:
+    branches:
+    - "dev*"
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull-request
+        uses: actions/checkout@v3
+      
+      - name: auto-deploy
+        uses: diillson/auto-pull-request@v1.0.1
+        with:
+          destination_branch: "main"                       # If blank, default: master
+          pr_title: "Pulling ${{ github.ref }} into main"  # Title of pull request
+          pr_body: |                                        # Full markdown support, requires pr_title to be set
+            :crown: *An automated PR*
+            Pulling Dev branches into Main
+             - - -
+              For Support, please visit [KBVE Support](https://rentearth.com/support/)
+             - - -
+              For Git References, please visit [KBVE Git Application Reference](https://kbve.com/application/git/)
+             - - -
+              For Project Information, please visit [the RentEarth Project Docs](https://kbve.com/project/rentearth/)
+             - - -
+              Thank you for your contribution!
+          pr_label: "auto-pr"
