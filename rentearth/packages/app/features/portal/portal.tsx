@@ -1,4 +1,4 @@
-import { Button, Paragraph, YStack, RegisterForm, LoginForm, RecoveryForm, Form } from '@my/ui'
+import { Button, Paragraph, YStack, Form } from '@my/ui'
 import { ChevronLeft } from '@tamagui/lucide-icons'
 import React from 'react'
 import { createParam } from 'solito'
@@ -6,14 +6,9 @@ import { useLink } from 'solito/link'
 
 const { useParam } = createParam<{ id: string }>()
 
-const AuthRender = (props: { id?: string }) => {
+const PortalRender = (props: { id?: string }) => {
   switch (props.id) {
-    case 'register':
-      return <RegisterForm />
-    case 'login':
-      return <LoginForm />
-    case 'recover':
-      return <RecoveryForm />
+    
     default:
       return (
         <>
@@ -23,7 +18,7 @@ const AuthRender = (props: { id?: string }) => {
   }
 }
 
-export function Auth() {
+export function Portal() {
   const [id] = useParam('id')
   const link = useLink({
     href: '/',
@@ -31,7 +26,7 @@ export function Auth() {
 
   return (
     <YStack f={1} jc="center" ai="center" backgroundColor={"#000"} space>
-      <AuthRender id={id} />
+      <PortalRender id={id} />
       <Button {...link} icon={ChevronLeft}>
         Go Home
       </Button>
