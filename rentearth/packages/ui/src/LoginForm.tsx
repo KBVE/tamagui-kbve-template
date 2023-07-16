@@ -105,7 +105,7 @@ export const LoginForm = () => {
       <XStack alignItems="center" space="$1">
           <Button
             {...useLink({
-              href: '/auth/recover',
+              href: '/account/recover',
             })}
           >
             <H3>Forgot Password?</H3>
@@ -114,7 +114,7 @@ export const LoginForm = () => {
         <XStack alignItems="center" space="$1">
           <Button
             {...useLink({
-              href: '/auth/register',
+              href: '/account/register',
             })}
           >
             <H3>Don't have an account? Sign Up!</H3>

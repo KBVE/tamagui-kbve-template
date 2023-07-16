@@ -23,10 +23,10 @@ import { useLink } from 'solito/link'
 
 export function HomeScreen() {
   const linkProps = useLink({
-    href: '/auth/login',
+    href: '/account/login',
   })
   const registerProps = useLink({
-    href: '/auth/register',
+    href: '/account/register',
   })
 
   return (

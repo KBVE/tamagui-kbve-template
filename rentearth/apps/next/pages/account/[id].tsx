@@ -1,13 +1,13 @@
-import { Auth } from 'app/features/auth/auth'
+import { Account } from 'app/features/account/account'
 import Head from 'next/head'
 
 export default function Page() {
   return (
     <>
       <Head>
-        <title> Auth </title>
+        <title> Account </title>
       </Head>
-      <Auth />
+      <Account />
     </>
   )
 }
