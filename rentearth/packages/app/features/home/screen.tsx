@@ -3,6 +3,7 @@ import {
   Button,
   H1,
   H2,
+  H3,
   Paragraph,
   Text,
   Separator,
@@ -22,14 +23,14 @@ import { useLink } from 'solito/link'
 
 export function HomeScreen() {
   const linkProps = useLink({
-    href: '/auth/login',
+    href: '/account/login',
   })
   const registerProps = useLink({
-    href: '/auth/register',
+    href: '/account/register',
   })
 
   return (
-    <YStack f={1} jc="center" ai="center" p="$4" space>
+    <YStack f={1} jc="center" ai="center" p="$4"  space >
       <XStack f={1} $sm={{ flexDirection: 'row' }} jc="center" ai="center" ac="center" space>
         <ShopCard
           link={'/rent/earth'}
@@ -71,6 +72,8 @@ export function HomeScreen() {
       </XStack>
 
       <HomeSheet>
+        <YStack space="$4" maw={600}>
+        <H3 ta="center"> Button to Steam Game?</H3>
         <Paragraph ta="center">
           Project Docs located{' '}
           <Anchor color="$color12" href="https://kbve.com/project/rentearth/" target="_blank">
@@ -81,6 +84,7 @@ export function HomeScreen() {
             Kilo Byte Virtual Enterprise.
           </Anchor>{' '}
         </Paragraph>
+        </YStack>
       </HomeSheet>
     </YStack>
   )

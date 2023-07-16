@@ -18,21 +18,18 @@ import {
   YStack,
   YGroup,
   Separator,
-  ListItem
+  ListItem,
 } from 'tamagui'
 import { useLink } from 'solito/link'
 import { Eye, UserPlus } from '@tamagui/lucide-icons'
 
 import React, { useEffect, useState } from 'react'
 
-export const RegisterForm = () => {
+export const LoginForm = () => {
   const [status, setStatus] = useState<'ready' | 'submitting' | 'submitted'>('ready')
 
-  const [name, SetName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [confirm, setConfirm] = useState('')
-  const [hidePass, setHidePass] = useState(true)
 
   useEffect(() => {
     if (status === 'submitting') {
@@ -45,9 +42,8 @@ export const RegisterForm = () => {
   }, [status])
   return (
     <YStack jc="center" ai="center" p="$4" space>
-      
       <Button>
-      <H3>Welcome on board!</H3>
+        <H3>Hi! Welcome</H3>
       </Button>
       <XStack space>
         <Form
@@ -61,23 +57,31 @@ export const RegisterForm = () => {
           borderColor="$borderColor"
           padding="$8"
         >
-          <SizableText fontSize={20} fontFamily="$body" >
+          <SizableText fontSize={12} fontFamily="$body">
             {' '}
-            Lets create an account
+            A more productive you is waiting inside this app. Please enter your details.
           </SizableText>
-         
+
           <XStack alignItems="center" space="$1">
-            <Label htmlFor={'username'} width={80} size={'$1'}>Username: </Label>
-            <Input id={"username"} flex={1} size={'$4'} onChangeText={SetName} value={name} defaultValue='' placeholder='Your Username!'  />
-          </XStack>
-          <XStack alignItems="center" space="$1">
-            <Label htmlFor={'email'} width={80} size={'$1'}>Email: </Label>
-            <Input id={"email"} flex={1} size={'$4'} onChangeText={setEmail} value={email} defaultValue='' placeholder='Your Email!' />
-          </XStack>
-          <XStack alignItems="center" space="$1">
-            <Label htmlFor={'password'}  width={80} size={'$1'}>Password: </Label>
+            <Label htmlFor={'email'} width={80} size={'$1'}>
+              Email:{' '}
+            </Label>
             <Input
-              id={"password"}
+              id={'email'}
+              flex={1}
+              size={'$4'}
+              onChangeText={setEmail}
+              value={email}
+              defaultValue=""
+              placeholder="Your Email!"
+            />
+          </XStack>
+          <XStack alignItems="center" space="$1">
+            <Label htmlFor={'password'} width={80} size={'$1'}>
+              Password:{' '}
+            </Label>
+            <Input
+              id={'password'}
               flex={1}
               size={'$4'}
               onChangeText={setPassword}
@@ -85,26 +89,37 @@ export const RegisterForm = () => {
               secureTextEntry={true}
             />
           </XStack>
-          <XStack alignItems="center" space="$1">
-            <Label htmlFor={'password'}  width={80} size={'$1'}>Confirm: </Label>
-            <Input
-              flex={1}
-              size={'$4'}
-              onChangeText={setConfirm}
-              value={confirm}
-              secureTextEntry={hidePass ? true : false}
-            />
-          </XStack>
+
           <Form.Trigger asChild disabled={status !== 'ready'}>
             <Button
               icon={status === 'submitting' ? () => <Spinner padding={'$1'} m="$1" /> : undefined}
             >
-              Register
+              Log In
             </Button>
           </Form.Trigger>
           <H4>{status[0].toUpperCase() + status.slice(1)}</H4>
         </Form>
+
+        
       </XStack>
+      <XStack alignItems="center" space="$1">
+          <Button
+            {...useLink({
+              href: '/account/recover',
+            })}
+          >
+            <H3>Forgot Password?</H3>
+          </Button>
+        </XStack>
+        <XStack alignItems="center" space="$1">
+          <Button
+            {...useLink({
+              href: '/account/register',
+            })}
+          >
+            <H3>Don't have an account? Sign Up!</H3>
+          </Button>
+        </XStack>
     </YStack>
   )
 }

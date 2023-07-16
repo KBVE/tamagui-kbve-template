@@ -1,4 +1,4 @@
-import { Auth } from 'app/features/auth/auth'
+import { Account } from 'app/features/account/account'
 import { Stack } from 'expo-router'
 
 export default function Screen() {
@@ -6,12 +6,12 @@ export default function Screen() {
     <>
       <Stack.Screen
         options={{
-          title: 'Auth',
+          title: 'Account',
           headerStyle: { backgroundColor : '#343341'},
-          headerShown: true,
+          headerShown: false,
           animation: "slide_from_bottom",        }}
       />
-      <Auth />
+      <Account />
     </>
   )
 }
