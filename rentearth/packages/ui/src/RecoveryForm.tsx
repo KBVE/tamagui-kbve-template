@@ -24,18 +24,21 @@ import {
   import { Eye, UserPlus } from '@tamagui/lucide-icons'
   
   import React, { useEffect, useState } from 'react'
+
+  import { email$, tasker } from './library/Storage'
+  import { useStore } from '@nanostores/react'
+
   
   export const RecoveryForm = () => {
     const [status, setStatus] = useState<'ready' | 'submitting' | 'submitted'>('ready')
   
-    const [recover, setRecover] = useState('')
+    const $email = useStore(email$);
 
     useEffect(() => {
       if (status === 'submitting') {
         const timer = setTimeout(() => setStatus('ready'), 4000)
         return () => {
           clearTimeout(timer)
-          console.log(recover)
         }
       }
     }, [status])
@@ -70,8 +73,8 @@ import {
                 id={'recover'}
                 flex={1}
                 size={'$4'}
-                onChangeText={setRecover}
-                value={recover}
+                onChangeText={newText => tasker(email$, newText)}
+                value={$email}
                 placeholder="Your Email!"
               />
             </XStack>

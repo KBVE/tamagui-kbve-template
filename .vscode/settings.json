@@ -3,7 +3,9 @@
         "kbve",
         "lucide",
         "manypkg",
+        "nanostores",
         "solito",
-        "tamagui"
+        "tamagui",
+        "tasker"
     ]
 }
