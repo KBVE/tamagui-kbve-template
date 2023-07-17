@@ -25,18 +25,23 @@ import { Eye, UserPlus } from '@tamagui/lucide-icons'
 
 import React, { useEffect, useState } from 'react'
 
+import { email$, password$, flow$, status$, tasker } from './library/Storage'
+import { useStore } from '@nanostores/react'
+
 export const LoginForm = () => {
   const [status, setStatus] = useState<'ready' | 'submitting' | 'submitted'>('ready')
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const $status = useStore(status$)
+  const $flow = useStore(flow$);
+  const $email = useStore(email$);
+  const $password = useStore(password$);
+
 
   useEffect(() => {
     if (status === 'submitting') {
       const timer = setTimeout(() => setStatus('ready'), 4000)
       return () => {
         clearTimeout(timer)
-        console.log(email)
       }
     }
   }, [status])
@@ -70,8 +75,8 @@ export const LoginForm = () => {
               id={'email'}
               flex={1}
               size={'$4'}
-              onChangeText={setEmail}
-              value={email}
+              onChangeText={newText => tasker(email$, newText)}
+              value={$email}
               defaultValue=""
               placeholder="Your Email!"
             />
@@ -84,8 +89,8 @@ export const LoginForm = () => {
               id={'password'}
               flex={1}
               size={'$4'}
-              onChangeText={setPassword}
-              value={password}
+              onChangeText={newText => tasker(password$, newText)}
+              value={$password}
               secureTextEntry={true}
             />
           </XStack>
