@@ -29,7 +29,6 @@ import { email$, password$, flow$, status$, tasker } from './library/Storage'
 import { useStore } from '@nanostores/react'
 
 export const LoginForm = () => {
-  const [status, setStatus] = useState<'ready' | 'submitting' | 'submitted'>('ready')
 
   const $status = useStore(status$)
   const $flow = useStore(flow$);
@@ -38,13 +37,15 @@ export const LoginForm = () => {
 
 
   useEffect(() => {
-    if (status === 'submitting') {
-      const timer = setTimeout(() => setStatus('ready'), 4000)
+    console.log(`Current Status: ${$status}`);
+    if ($status === 'submitting') {
+      const timer = setTimeout(() =>tasker(status$, undefined), 4000)
       return () => {
         clearTimeout(timer)
+        console.log(`[DEBUG] : Status: ${$status}`)
       }
     }
-  }, [status])
+  }, [$status])
   return (
     <YStack jc="center" ai="center" p="$4" space>
       <Button>
@@ -55,7 +56,7 @@ export const LoginForm = () => {
           alignItems="center"
           minWidth={350}
           space
-          onSubmit={() => setStatus('submitting')}
+          onSubmit={() => tasker(status$, 'submitting')}
           borderWidth={1}
           borderRadius="$4"
           backgroundColor="$background"
@@ -95,14 +96,14 @@ export const LoginForm = () => {
             />
           </XStack>
 
-          <Form.Trigger asChild disabled={status !== 'ready'}>
+          <Form.Trigger asChild disabled={$status !== undefined}>
             <Button
-              icon={status === 'submitting' ? () => <Spinner padding={'$1'} m="$1" /> : undefined}
+              icon={$status === 'submitting' ? () => <Spinner padding={'$1'} m="$1" /> : undefined}
             >
               Log In
             </Button>
           </Form.Trigger>
-          <H4>{status[0].toUpperCase() + status.slice(1)}</H4>
+          <H4>{$status}</H4>
         </Form>
 
         

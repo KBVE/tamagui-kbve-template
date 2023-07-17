@@ -21,7 +21,7 @@ export const user$: WritableAtom<undefined> = atom(undefined);
 
 export const tasker = async ( storageKey : WritableAtom, value : any ) => {
     task(async () => {
-        console.log(`Setting ${value}`)
+        //console.log(`Setting ${value}`)
         storageKey.set(value)
     })
 }
