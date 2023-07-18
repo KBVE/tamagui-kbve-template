@@ -26,6 +26,7 @@ import { Eye, UserPlus } from '@tamagui/lucide-icons'
 import React, { useEffect, useState } from 'react'
 
 import { email$, password$, flow$, status$, tasker } from './library/Storage'
+import { FormField } from './library/Form'
 import { useStore } from '@nanostores/react'
 
 export const LoginForm = () => {
@@ -68,34 +69,8 @@ export const LoginForm = () => {
             A more productive you is waiting inside this app. Please enter your details.
           </SizableText>
 
-          <XStack alignItems="center" space="$1">
-            <Label htmlFor={'email'} width={80} size={'$1'}>
-              Email:{' '}
-            </Label>
-            <Input
-              id={'email'}
-              flex={1}
-              size={'$4'}
-              onChangeText={newText => tasker(email$, newText)}
-              value={$email}
-              defaultValue=""
-              placeholder="Your Email!"
-            />
-          </XStack>
-          <XStack alignItems="center" space="$1">
-            <Label htmlFor={'password'} width={80} size={'$1'}>
-              Password:{' '}
-            </Label>
-            <Input
-              id={'password'}
-              flex={1}
-              size={'$4'}
-              onChangeText={newText => tasker(password$, newText)}
-              value={$password}
-              secureTextEntry={true}
-            />
-          </XStack>
-
+          <FormField data={"email"} storage={email$} />
+          <FormField data={"password"} storage={password$} />
           <Form.Trigger asChild disabled={$status !== undefined}>
             <Button
               icon={$status === 'submitting' ? () => <Spinner padding={'$1'} m="$1" /> : undefined}
@@ -103,7 +78,7 @@ export const LoginForm = () => {
               Log In
             </Button>
           </Form.Trigger>
-          <H4>{$status}</H4>
+          <H4>{$status ?? ''}</H4>
         </Form>
 
         

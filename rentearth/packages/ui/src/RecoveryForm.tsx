@@ -77,7 +77,7 @@ import {
                 flex={1}
                 size={'$4'}
                 onChangeText={newText => tasker(email$, newText)}
-                value={$email}
+                value={$email  ?? ''}
                 placeholder="Your Email!"
               />
             </XStack>
@@ -90,7 +90,7 @@ import {
                 Request Password
               </Button>
             </Form.Trigger>
-            <H4>{$status}</H4>
+            <H4>{$status  ?? ''}</H4>
           </Form>
         </XStack>
       </YStack>
