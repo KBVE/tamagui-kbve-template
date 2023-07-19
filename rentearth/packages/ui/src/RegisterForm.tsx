@@ -1,27 +1,18 @@
 import {
-  H1,
-  H2,
-  Paragraph,
+
   Input,
   Label,
-  Card,
-  Image,
+
   Button,
   Form,
-  Text,
   H3,
   H4,
-  SizeTokens,
   SizableText,
   Spinner,
   XStack,
   YStack,
-  YGroup,
-  Separator,
-  ListItem,
+
 } from 'tamagui'
-import { useLink } from 'solito/link'
-import { Eye, UserPlus } from '@tamagui/lucide-icons'
 
 import React, { useEffect, useState } from 'react'
 
