@@ -18,7 +18,8 @@ import React, { useEffect, useState } from 'react'
 import { create, isLoggedIn } from './library/appwrite';
 import { email$, password$, flow$, status$, user$, tasker,  } from './library/Storage'
 import { useStore } from '@nanostores/react'
-import { useRouter } from "expo-router"
+import { useLink } from 'solito/link'
+
 
 export const RegisterForm = () => {
 
@@ -35,9 +36,6 @@ export const RegisterForm = () => {
   useEffect(() => {
     console.log(`Current Status: ${$status}`)
     
-    const GoHome = () => {
-      
-    }
 
     const RegisterUser = async () => {
 

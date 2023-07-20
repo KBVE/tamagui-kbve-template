@@ -12,6 +12,7 @@ export const flow$: WritableAtom<undefined> = atom(undefined);
 export const status$: WritableAtom<undefined> = atom(undefined);
 export const error$: WritableAtom<undefined> = atom(undefined);
 export const temp$: WritableAtom<undefined> = atom(undefined);
+export const toast$: WritableAtom<undefined> = atom(undefined);
 
 
 //?     [?User]

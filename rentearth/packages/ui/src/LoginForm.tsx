@@ -3,7 +3,7 @@ import { Button, Form, H3, H4, SizableText, Spinner, XStack, YStack } from 'tama
 import React, { useEffect, useState } from 'react'
 
 import { email$, password$, flow$, status$, tasker, VE } from './library/Storage'
-import { FormField, FormLink } from './library/Form'
+import { FormField, FormLink, FormForm } from './library/Form'
 import { useStore } from '@nanostores/react'
 
 export const LoginForm = () => {
@@ -23,33 +23,13 @@ export const LoginForm = () => {
         <H3>Hi! Welcome</H3>
       </Button>
       <XStack space>
-        <Form
-          alignItems="center"
-          minWidth={350}
-          space
-          onSubmit={() => tasker(status$, 'submitting')}
-          borderWidth={1}
-          borderRadius="$4"
-          backgroundColor="$background"
-          borderColor="$borderColor"
-          padding="$8"
-        >
-          <SizableText fontSize={12} fontFamily="$body">
-            {' '}
-            A more productive you is waiting inside this app. Please enter your details.
-          </SizableText>
+        <FormForm data={'A more productive you is waiting inside this app. Please enter your details!'}>
 
-          <FormField data={'Email'} storage={email$} />
-          <FormField data={'Password'} storage={password$} />
-          <Form.Trigger asChild disabled={$status !== undefined}>
-            <Button
-              icon={$status === 'submitting' ? () => <Spinner padding={'$1'} m="$1" /> : undefined}
-            >
-              Log In
-            </Button>
-          </Form.Trigger>
-          <H4>{$status ?? ''}</H4>
-        </Form>
+          <FormField formId={'login'} data={'Email'} storage={email$} />
+          <FormField formId={'login'} data={'Password'} storage={password$} secure={true} />
+        
+        </FormForm>
+          
       </XStack>
 
       <FormLink data={'Forgot Password?'} link={'/account/recover'} />
