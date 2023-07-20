@@ -15,12 +15,14 @@ import {
 } from 'tamagui'
 
 import React, { useEffect, useState } from 'react'
-
-import { email$, password$, flow$, status$, user$, tasker } from './library/Storage'
+import { create, isLoggedIn } from './library/appwrite';
+import { email$, password$, flow$, status$, user$, tasker,  } from './library/Storage'
 import { useStore } from '@nanostores/react'
+import { useRouter } from "expo-router"
 
 export const RegisterForm = () => {
 
+  
   const [confirm, setConfirm] = useState('')
   const [hidePass, setHidePass] = useState(true)
 
@@ -28,16 +30,37 @@ export const RegisterForm = () => {
   const $user = useStore(user$)
   const $email = useStore(email$)
   const $password = useStore(password$)
+  const $flow = useStore(flow$);
 
   useEffect(() => {
     console.log(`Current Status: ${$status}`)
-    if ($status === 'submitting') {
-      const timer = setTimeout(() => tasker(status$, undefined), 4000)
-      return () => {
-        clearTimeout(timer)
-        console.log(`[DEBUG] : Status: ${$status}`)
-      }
+    
+    const GoHome = () => {
+      
     }
+
+    const RegisterUser = async () => {
+
+      try {
+        await create(String($email), String($password), String($user))
+        tasker(status$, undefined)
+        //useRouter().push('/')
+
+      }
+      catch (error) {
+        tasker(flow$, error)
+        tasker(status$, error)
+      }
+      
+        
+    }
+
+    if ($status === 'submitting') {
+
+      //* Await Register
+      RegisterUser()
+    }
+    
   }, [$status])
 
   return (
@@ -59,7 +82,7 @@ export const RegisterForm = () => {
         >
           <SizableText fontSize={20} fontFamily="$body">
             {' '}
-            Lets create an account
+            Lets create an account!
           </SizableText>
 
           <XStack alignItems="center" space="$1">
@@ -114,14 +137,17 @@ export const RegisterForm = () => {
               secureTextEntry={hidePass ? true : false}
             />
           </XStack>
-          <Form.Trigger asChild disabled={$status !== undefined}>
+          <Form.Trigger asChild disabled={$status === 'submitting'}>
             <Button
               icon={$status === 'submitting' ? () => <Spinner padding={'$1'} m="$1" /> : undefined}
             >
               Register
             </Button>
           </Form.Trigger>
-          <H4>{$status ?? ''}</H4>
+          <SizableText fontSize={15} fontFamily="$body" color="#E879F9">{$status ?? ''}</SizableText>
+          <SizableText fontSize={10} fontFamily="$body" color="#E879F9">
+          Shadow Wizard Money Gang - v0.1 
+          </SizableText>
         </Form>
       </XStack>
     </YStack>

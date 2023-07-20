@@ -17,3 +17,4 @@ export * from './RecoveryForm'
 export * from './ShopCard'
 //?     [STORAGE]
 export * from './library/Storage'
+export * from './library/Form'

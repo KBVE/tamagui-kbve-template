@@ -39,8 +39,8 @@ export const LoginForm = () => {
             A more productive you is waiting inside this app. Please enter your details.
           </SizableText>
 
-          <FormField data={'email'} storage={email$} />
-          <FormField data={'password'} storage={password$} />
+          <FormField data={'Email'} storage={email$} />
+          <FormField data={'Password'} storage={password$} />
           <Form.Trigger asChild disabled={$status !== undefined}>
             <Button
               icon={$status === 'submitting' ? () => <Spinner padding={'$1'} m="$1" /> : undefined}
