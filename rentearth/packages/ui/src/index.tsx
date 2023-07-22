@@ -15,4 +15,6 @@ export * from './LoginForm'
 export * from './RecoveryForm'
 //?     [RENT]
 export * from './ShopCard'
-//?     []
+//?     [STORAGE]
+export * from './library/Storage'
+export * from './library/Form'
