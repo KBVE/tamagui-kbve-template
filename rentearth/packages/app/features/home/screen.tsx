@@ -57,7 +57,7 @@ export function HomeScreen() {
       </XStack>
       <YStack space="$4" maw={600}>
         <H1 ta="center">Welcome to RentEarth</H1>
-        <Paragraph ta="center">Rent the augmentation but parish if you fail.</Paragraph>
+        <Paragraph ta="center">Rent the augmentation but perish if you fail.</Paragraph>
 
         <H2 ta="center">The Jester has gone Rogue.</H2>
 
