@@ -9,16 +9,25 @@ import { atom, WritableAtom, task } from "nanostores";
 //?     [X]
 export const misc$: WritableAtom<undefined> = atom(undefined);
 export const flow$: WritableAtom<undefined> = atom(undefined);
-export const status$: WritableAtom<undefined> = atom(undefined);
-export const error$: WritableAtom<undefined> = atom(undefined);
 export const temp$: WritableAtom<undefined> = atom(undefined);
-export const toast$: WritableAtom<undefined> = atom(undefined);
+export const debug$: WritableAtom<undefined> = atom(undefined);
 
+
+//?     [?Toast]
+export const position$: WritableAtom<undefined> = atom(undefined);
+export const toast$: WritableAtom<undefined> = atom(undefined);
 
 //?     [?User]
 export const email$: WritableAtom<undefined> = atom(undefined);
 export const password$: WritableAtom<undefined> = atom(undefined);
 export const user$: WritableAtom<undefined> = atom(undefined);
+
+
+//?     [?Tasks]
+export const void$: WritableAtom<undefined> = atom(undefined);
+export const minion$: WritableAtom<undefined> = atom(undefined);
+export const status$: WritableAtom<undefined> = atom(undefined);
+export const error$: WritableAtom<undefined> = atom(undefined);
 
 
 export const tasker = async ( storageKey : WritableAtom, value : any ) => {
