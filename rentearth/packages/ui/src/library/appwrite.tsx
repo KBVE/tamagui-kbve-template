@@ -148,7 +148,7 @@ export const minionLogin = async (
   ) => {
 	task(async () => {
 	  console.log(`[TASK] -> ${email.get()} : ${password.get()} : ${status.get()} : ${error.get()}`)
-	  //TODO Logic
+	  //TODO Logic + Validation ?!? before sending it over to the main API
 	  login(email.get(), password.get())
 		.then(() => (''))
 		.catch((e) => ClientStorage.tasker(error, e))
