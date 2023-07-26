@@ -1,7 +1,7 @@
 import { Button, H3, XStack, YStack } from 'tamagui'
 import { email$, password$, error$, status$ } from './library/Storage'
 import { FormField, FormLink, FormForm } from './library/Form'
-import { minionLogin } from './library/appwrite'
+import { minionLogin, v0id } from './library/appwrite'
 import { useStore } from '@nanostores/react'
 
 export const LoginForm = () => {

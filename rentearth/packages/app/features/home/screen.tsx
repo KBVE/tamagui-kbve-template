@@ -30,6 +30,9 @@ export function HomeScreen() {
   const registerProps = useLink({
     href: '/account/register',
   })
+  const todoProps = useLink({
+    href: '/todo/diesel'
+  })
 
   return (
     <YStack f={1} jc="center" ai="center" p="$4"  space >
@@ -70,6 +73,9 @@ export function HomeScreen() {
         </Button>
         <Button {...registerProps} size="$5" color="#e879f9" m="$1">
           Register
+        </Button>
+        <Button {...todoProps} size="$5" color="#e879f9" m="$1">
+          ToDo
         </Button>
       </XStack>
 
