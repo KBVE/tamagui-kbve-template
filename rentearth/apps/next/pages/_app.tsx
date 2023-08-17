@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
   return (
     <>
       <Head>
-        <title>RentEarth.com </title>
+        <title>TamaGui Template </title>
         <meta name="description" content="Proof of Concept from KBVE! Rent a virtual world now!" />
         <link rel="icon" href="/favicon.ico" />
         

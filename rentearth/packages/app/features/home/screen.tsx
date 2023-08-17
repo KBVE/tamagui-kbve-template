@@ -59,7 +59,7 @@ export function HomeScreen() {
         />
       </XStack>
       <YStack space="$4" maw={600}>
-        <H1 ta="center">Welcome to RentEarth</H1>
+        <H1 ta="center">Welcome to TamaGui</H1>
         <Paragraph ta="center">Rent the augmentation but perish if you fail.</Paragraph>
 
         <H2 ta="center">The Jester has gone Rogue.</H2>
@@ -84,7 +84,7 @@ export function HomeScreen() {
         <H3 ta="center"> Button to Steam Game?</H3>
         <Paragraph ta="center">
           Project Docs located{' '}
-          <Anchor color="$color12" href="https://kbve.com/project/rentearth/" target="_blank">
+          <Anchor color="$color12" href="https://kbve.com/project/" target="_blank">
             Rent Earth Project
           </Anchor>
           , and actively developed by{' '}
